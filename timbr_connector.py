@@ -7,7 +7,7 @@
 #    ,%##%          ``   `/@@*  @@  @`  @@` ,@  (/@@@#/  @@   
 #      ``                                                     
 #  ``````````````````````````````````````````````````````````````
-#  Copyright (C) 2018-2021 timbr.ai
+#  Copyright (C) 2018-2022 timbr.ai
 #
 #  This file is part of the timbr-JayDeBeApi connector
 #
@@ -34,6 +34,5 @@ def get_combined_jars_path(maindir):
 jars_path = get_combined_jars_path(main_jar_path)
 
 def getConnection(jdbc_url, username, password):
-
     conn = jaydebeapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
     return conn

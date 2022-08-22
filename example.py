@@ -1,14 +1,28 @@
 import timbr_connector as timbr
 
 if __name__ == '__main__':
+    # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+    username = '<TIMBR_USER>'
+    # userpass - Should be then token value if using a token as a username, otherwise its the user's password.
+    userpass = '<TIMBR_PASSWORD>'
+    # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
+    hostname = '<TIMBR_IP/HOST>'
+    # port - Timbr default port 11000
+    port = '<TIMBR_PORT>'
+    # ontology - the ontology / knowledge graph to connect to.
+    ontology = '<ONTOLOGY_NAME>'
+    # enabled_ssl - Change to true if SSL is enabled.
+    enabled_ssl = 'false'
 
-    # timbr default port 11000
-    # Use token as DB user when connecting using token and not using password
-    # Change ssl=true if SSL is enabled
-    conn = timbr.getConnection("jdbc:hive2://<TIMBR_IP/HOST>:<TIMBR_PORT>/<ONTOLOGY_NAME>;transportMode=http;ssl=false", "<TIMBR_USER>", "<TIMBR_PASSWORD>")
+    # Initiate a connection object
+    conn = timbr.getConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl}", username, userpass)
 
+    # Use the connection to execute a query
     with conn.cursor() as curs:
+        # Execute query
         curs.execute('SHOW CONCEPTS')
+        # Fetch results
         concepts = curs.fetchall()
+        # Print the results
         for concept in concepts:
             print(concept)
