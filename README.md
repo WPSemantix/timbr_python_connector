@@ -1,4 +1,4 @@
-# timbr python connector sample file
+# timbr Python connector sample file
 This project is a sample connecting to timbr using Python.
 
 ## Dependencies
