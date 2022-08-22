@@ -1,3 +1,5 @@
+![Timbr logo description](Timbr_logo.png)
+
 # timbr Python connector sample file
 This project is a sample connecting to timbr using Python.
 
