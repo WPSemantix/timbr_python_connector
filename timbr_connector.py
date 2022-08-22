@@ -7,7 +7,7 @@
 #    ,%##%          ``   `/@@*  @@  @`  @@` ,@  (/@@@#/  @@   
 #      ``                                                     
 #  ``````````````````````````````````````````````````````````````
-#  Copyright (C) 2018-2021 timbr.ai
+#  Copyright (C) 2018-2022 timbr.ai
 #
 #  This file is part of the timbr-JayDeBeApi connector
 #
