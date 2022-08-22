@@ -4,7 +4,7 @@
 This project is a sample connecting to timbr using Python.
 
 ## Dependencies
-- Python from 3.6.9 to 3.7.13
+- Python 3.7.13 +
 - Java 8 or Java 11
 
 ## Installation
