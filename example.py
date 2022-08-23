@@ -3,7 +3,7 @@ import timbr_connector as timbr
 if __name__ == '__main__':
     # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
     username = '<TIMBR_USER>'
-    # userpass - Should be then token value if using a token as a username, otherwise its the user's password.
+    # userpass - Should be the token value if using a token as a username, otherwise its the user's password.
     userpass = '<TIMBR_PASSWORD>'
     # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
     hostname = '<TIMBR_IP/HOST>'
