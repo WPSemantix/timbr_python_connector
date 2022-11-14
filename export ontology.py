@@ -4,7 +4,7 @@ def exportOntology(cursor, path):
     cursor.execute('export ontology owl')
     # Fetch results
     rows = cursor.fetchall()
-    # Print the results
+    # Save the results
     
     with open(path, "w") as outputFile:
         for row in rows:
@@ -14,7 +14,7 @@ def exportConcept(cursor, path, concept):
     cursor.execute('export rdf concept ' + concept)
     # Fetch results
     rows = cursor.fetchall()
-    # Print the results
+    # Save the results
     with open(path, "w") as outputFile:
         for row in rows:
             outputFile.write(row[0] + "\n")
@@ -23,7 +23,7 @@ def exportRelationship(cursor, path, relationship):
     cursor.execute('export rdf relationship ' + relationship)
     # Fetch results
     rows = cursor.fetchall()
-    # Print the results
+    # Save the results
     with open(path, "w") as outputFile:
         for row in rows:
             outputFile.write(row[0] + "\n")
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # Initiate a connection object
     conn = timbr.getConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
     
-        # Execute query
+    # Export ontology, concept and relationships
     path = ""
     concept = ""
     relationship = ""
