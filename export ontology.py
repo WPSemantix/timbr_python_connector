@@ -46,7 +46,7 @@ if __name__ == '__main__':
     conn = timbr.getConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
     
         # Execute query
-    path = "C:\\data\\output\\"
+    path = ""
     concept = ""
     relationship = ""
     with conn.cursor() as cursor:
