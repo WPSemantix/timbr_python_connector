@@ -5,7 +5,6 @@ def exportOntology(cursor, path):
     # Fetch results
     rows = cursor.fetchall()
     # Save the results
-    
     with open(path, "w") as outputFile:
         for row in rows:
             outputFile.write(row[0] + "\n")
