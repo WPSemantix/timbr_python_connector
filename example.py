@@ -1,4 +1,8 @@
-import timbr_connector as timbr
+# use for pip installation
+import timbr_python_connector as timbr
+
+# use for repository installation
+import timbr_python_connector.timbr_connector as timbr
 
 if __name__ == '__main__':
     # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
@@ -15,7 +19,7 @@ if __name__ == '__main__':
     enabled_ssl = 'false'
 
     # Initiate a connection object
-    conn = timbr.getConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl}", username, userpass)
+    conn = timbr.getConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
 
     # Use the connection to execute a query
     with conn.cursor() as curs:
