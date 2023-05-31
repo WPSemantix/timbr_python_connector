@@ -15,7 +15,7 @@ Install as clone repository:
 - Download the following jar to `jars` path: https://repo1.maven.org/maven2/org/apache/hive/hive-jdbc/2.3.9/hive-jdbc-2.3.9-standalone.jar
 
 Install using pip and git:
-- pip install git+https://github.com/WPSemantix/timbr_python_connector
+- `pip install git+https://github.com/WPSemantix/timbr_python_connector`
 
 ## Sample usage
 - For an example of how to use the Python connector for Timbr, follow this [Example file](example.py) 
