@@ -22,6 +22,6 @@ setuptools.setup(
     'JPype1==1.3.0',
   ],
   package_data={
-    'timbr': ['jars/*'],
+    'timbr_python_connector': ['jars/*'],
   },
 )
