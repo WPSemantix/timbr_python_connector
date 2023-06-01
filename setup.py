@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
   name='timbr',
   version='1.0.0',
-  author='timbr',
+  author='timbr_python_connector',
   author_email='contact@timbr.ai',
   description='Timbr Python connector',
   long_description=long_description,
@@ -16,8 +16,7 @@ setuptools.setup(
     "Bug Tracker": "https://github.com/WPSemantix/timbr_python_connector/issues"
   },
   license='MIT',
-  packages=['timbr'],
-  package_dir={'timbr':'timbr_python_connector'},
+  packages=['timbr_python_connector'],
   install_requires=[
     'JayDeBeApi==1.2.3',
     'JPype1==1.3.0',
