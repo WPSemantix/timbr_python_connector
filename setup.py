@@ -17,7 +17,7 @@ setuptools.setup(
   },
   license='MIT',
   packages=['timbr'],
-  package_dir=['timbr_python_connector'],
+  package_dir={'timbr':'timbr_python_connector'},
   install_requires=[
     'JayDeBeApi==1.2.3',
     'JPype1==1.3.0',
