@@ -16,7 +16,8 @@ setuptools.setup(
     "Bug Tracker": "https://github.com/WPSemantix/timbr_python_connector/issues"
   },
   license='MIT',
-  packages=['timbr_python_connector'],
+  packages=['timbr'],
+  package_dir=['timbr_python_connector']
   install_requires=[
     'JayDeBeApi==1.2.3',
     'JPype1==1.3.0',
