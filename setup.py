@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
   name='timbr',
   version='1.0.0',
-  author='timbr',
+  author='timbr_python_connector',
   author_email='contact@timbr.ai',
   description='Timbr Python connector',
   long_description=long_description,
