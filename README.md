@@ -42,7 +42,7 @@ Install using pip and git:
   enabled_ssl = 'false'
   
   # Create new JDBC connection
-  conn = timbr.getJdbcConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
+  conn = PyTimbr.getJdbcConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
 
   # Use the connection to execute a query
   with conn.cursor() as curs:
@@ -63,7 +63,7 @@ Install using pip and git:
   # port - Timbr default port 11000
   # ontology - the ontology / knowledge graph to connect to.
   # enabled_ssl - Change to true if SSL is enabled.
-  conn = timbr.getConnection(hostname='<TIMBR_IP/HOST>', port='<TIMBR_PORT>', ontology='<ONTOLOGY_NAME>', username='<TIMBR_USER>', password='<TIMBR_PASSWORD>', enabled_ssl='false')
+  conn = PyTimbr.getConnection(hostname='<TIMBR_IP/HOST>', port='<TIMBR_PORT>', ontology='<ONTOLOGY_NAME>', username='<TIMBR_USER>', password='<TIMBR_PASSWORD>', enabled_ssl='false')
 
   # Use the connection to execute a query
   with conn.cursor() as curs:

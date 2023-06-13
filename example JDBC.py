@@ -1,8 +1,8 @@
 # use for pip installation
-import timbr
+import PyTimbr as timbr
 
 # use for repository installation
-import timbr.timbr_connector as timbr
+import PyTimbr.timbr_connector as timbr
 
 if __name__ == '__main__':
   # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
