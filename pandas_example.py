@@ -1,9 +1,9 @@
 import pandas as pd
 # use for pip installation
-import PyTimbr as timbr
+import pytimbr as timbr
 
 # use for repository installation
-import PyTimbr.timbr_connector as timbr
+import pytimbr.timbr_connector as timbr
 
 if __name__ == '__main__':    
   # Initiate a connection object

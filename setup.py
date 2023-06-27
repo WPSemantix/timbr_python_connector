@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
   long_description = fh.read()
 
 setuptools.setup(
-  name='PyTimbr',
+  name='pytimbr',
   version='1.0.0',
   author='timbr',
   author_email='contact@timbr.ai',
@@ -17,13 +17,13 @@ setuptools.setup(
     "Bug Tracker": "https://github.com/WPSemantix/timbr_python_connector/issues"
   },
   license='MIT',
-  packages=['PyTimbr'],
+  packages=['pytimbr'],
   install_requires=[
     'JayDeBeApi==1.2.3',
     'JPype1==1.3.0',
   ],
   package_data={
-    'PyTimbr': ['jars/*'],
+    'pytimbr': ['jars/*'],
   },
   keywords = [
     'timbr',
