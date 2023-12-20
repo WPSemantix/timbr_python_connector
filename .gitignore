@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+build_dist.cmd
+publish_to_pypi.cmd
