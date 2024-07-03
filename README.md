@@ -30,50 +30,73 @@ This project is a sample connecting to timbr using Python.
 
 ### Create JDBC connection
 ```python
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  username = '<TIMBR_USER>'
-  # userpass - Should be the token value if using a token as a username, otherwise its the user's password.
-  userpass = '<TIMBR_PASSWORD>'
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
   hostname = '<TIMBR_IP/HOST>'
-  # port - Timbr default port 11000
   port = '<TIMBR_PORT>'
+  ontology = '<ONTOLOGY_NAME>' 
+  username = '<TIMBR_USER>'
+  password = '<TIMBR_PASSWORD>'
+  enabled_ssl = '<false/true>'
+  http_path = '<TIMBR_SERVER_HTTP_PATH>'
+  
+  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
+  # port - Timbr's default port with enabled_ssl is 443 without SSL is 11000
   # ontology - the ontology / knowledge graph to connect to.
-  ontology = '<ONTOLOGY_NAME>'
-  # enabled_ssl - Change to true if SSL is enabled.
-  enabled_ssl = 'false'
+  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password - Should be the token value if using a token as a username, otherwise its the user's password.
+  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
+  # http_path - Use only if your timbr server http path is not '/timbr-server'
   
   # Create new JDBC connection
-  conn = pytimbr.getJdbcConnection(f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath=/timbr-server", username, userpass)
-
-  # Use the connection to execute a query
-  with conn.cursor() as curs:
-      # Execute query
-      curs.execute('SHOW CONCEPTS')
-      # Fetch results
-      concepts = curs.fetchall()
-      # Print the results
-      for concept in concepts:
-          print(concept)
+  conn = pytimbr.getJdbcConnection(
+    f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath={http_path}",
+    username,
+    password
+  )
 ```
 
 ### Create connection with params
 ```python
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  # userpass - Should be the token value if using a token as a username, otherwise its the user's password.
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - Timbr default port 11000
-  # ontology - the ontology / knowledge graph to connect to.
-  # enabled_ssl - Change to true if SSL is enabled.
-  conn = pytimbr.getConnection(hostname='<TIMBR_IP/HOST>', port='<TIMBR_PORT>', ontology='<ONTOLOGY_NAME>', username='<TIMBR_USER>', password='<TIMBR_PASSWORD>', enabled_ssl='false')
+  conn = pytimbr.getConnection(
+    hostname = '<TIMBR_IP/HOST>',
+    port = '<TIMBR_PORT>',
+    ontology = '<ONTOLOGY_NAME>',
+    username = '<TIMBR_USER>',
+    password = '<TIMBR_PASSWORD>',
+    enabled_ssl = '<false/true>',
+    http_path = '<TIMBR_SERVER_HTTP_PATH>'
+  )
 
+  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
+  # port - Timbr's default port with enabled_ssl is 443 without SSL is 11000
+  # ontology - the ontology / knowledge graph to connect to.
+  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password - Should be the token value if using a token as a username, otherwise its the user's password.
+  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
+  # http_path - Use only if your timbr server http path is not '/timbr-server'
+```
+## Execute a query
+
+### Execute using the connection
+```python
   # Use the connection to execute a query
   with conn.cursor() as curs:
-      # Execute query
-      curs.execute('SHOW CONCEPTS')
-      # Fetch results
-      concepts = curs.fetchall()
-      # Print the results
-      for concept in concepts:
-          print(concept)
+    # Execute query
+    curs.execute('SHOW CONCEPTS')
+    # Fetch results
+    concepts = curs.fetchall()
+    # Print the results
+    for concept in concepts:
+      print(concept)
+```
+
+### Execute using the Pandas
+```python
+  # Execute a query using Pandas
+  df = pandas.read_sql("SELECT * FROM timbr.person limit 1000", conn)
+  print("--------------------------------------")
+  print(df)
+  print("--------------------------------------")
+  print(df.columns)
+  print("--------------------------------------")
+  print(df.count())
 ```
