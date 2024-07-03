@@ -21,30 +21,54 @@ This project is a sample connecting to timbr using Python.
   - `pip install pytimbr`
 
 ## Sample usage
-- For an example of how to use the Python connector for Timbr, follow this [Example file](example.py) 
+- For an example of how to use the Python connector for Timbr:
+  - Create connection with params, follow this [Example file](examples/example.py) 
+  - Create JDBC connection, follow this [Example file](examples/example_JDBC.py) 
 - For an example of using the Timbr Python connector with Pandas:
   - Make sure you have the pandas library installed, or you can install it by running `pip install pandas`
-  - Follow this [Pandas Example File](pandas_example.py)
+  - Create connection with params, follow this [Example File](examples/pandas_example.py)
+  - Create JDBC connection, follow this [Example File](examples/pandas_example_JDBC.py)
 
 ## Create basic connection 
+
+### Create connection with params
+```python
+  conn = pytimbr.getConnection(
+    hostname = '<TIMBR_IP/HOST>',
+    port = '<TIMBR_PORT>',
+    ontology = '<ONTOLOGY_NAME>',
+    username = '<TIMBR_USER/token>',
+    password = '<TIMBR_PASSWORD/TOKEN_VALUE>',
+    enabled_ssl = '<false/true>',
+    http_path = '<TIMBR_SERVER_HTTP_PATH>'
+  )
+
+  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
+  # port - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
+  # ontology - the ontology / knowledge graph to connect to.
+  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password - Should be the token value if using a token as a username, otherwise its the user's password.
+  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
+  # http_path - Use only if your timbr server http path is not '/timbr-server'.
+```
 
 ### Create JDBC connection
 ```python
   hostname = '<TIMBR_IP/HOST>'
   port = '<TIMBR_PORT>'
-  ontology = '<ONTOLOGY_NAME>' 
-  username = '<TIMBR_USER>'
-  password = '<TIMBR_PASSWORD>'
+  ontology = '<ONTOLOGY_NAME>'
+  username = '<TIMBR_USER/token>'
+  password = '<TIMBR_PASSWORD/TOKEN_VALUE>'
   enabled_ssl = '<false/true>'
   http_path = '<TIMBR_SERVER_HTTP_PATH>'
   
   # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - Timbr's default port with enabled_ssl is 443 without SSL is 11000
+  # port - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
   # ontology - the ontology / knowledge graph to connect to.
   # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
   # password - Should be the token value if using a token as a username, otherwise its the user's password.
   # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
-  # http_path - Use only if your timbr server http path is not '/timbr-server'
+  # http_path - Use only if your timbr server http path is not '/timbr-server'.
   
   # Create new JDBC connection
   conn = pytimbr.getJdbcConnection(
@@ -54,26 +78,6 @@ This project is a sample connecting to timbr using Python.
   )
 ```
 
-### Create connection with params
-```python
-  conn = pytimbr.getConnection(
-    hostname = '<TIMBR_IP/HOST>',
-    port = '<TIMBR_PORT>',
-    ontology = '<ONTOLOGY_NAME>',
-    username = '<TIMBR_USER>',
-    password = '<TIMBR_PASSWORD>',
-    enabled_ssl = '<false/true>',
-    http_path = '<TIMBR_SERVER_HTTP_PATH>'
-  )
-
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - Timbr's default port with enabled_ssl is 443 without SSL is 11000
-  # ontology - the ontology / knowledge graph to connect to.
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  # password - Should be the token value if using a token as a username, otherwise its the user's password.
-  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
-  # http_path - Use only if your timbr server http path is not '/timbr-server'
-```
 ## Execute a query
 
 ### Execute using the connection
