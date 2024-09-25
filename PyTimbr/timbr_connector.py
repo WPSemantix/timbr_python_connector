@@ -7,10 +7,10 @@
 #    ,%##%          ``   `/@@*  @@  @`  @@` ,@  (/@@@#/  @@   
 #      ``                                                     
 #  ``````````````````````````````````````````````````````````````
-#  Copyright (C) 2018-2023 timbr.ai
+#  Copyright (C) 2018-2024 timbr.ai
 #
 
-import jaydebeapi
+from . import timbr_jdbapi
 import os
 import platform
 import pathlib
@@ -34,10 +34,10 @@ def get_combined_jars_path(maindir):
 jars_path = get_combined_jars_path(main_jar_path)
 
 def getJdbcConnection(jdbc_url, username, password):
-  conn = jaydebeapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
+  conn = timbr_jdbapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
   return conn
 
 def getConnection(hostname, port, ontology, username, password, enabled_ssl = True, http_path = '/timbr-server'):
   jdbc_url = f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath={http_path}"
-  conn = jaydebeapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
+  conn = timbr_jdbapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
   return conn
