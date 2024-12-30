@@ -1,18 +1,18 @@
 ![Timbr logo](https://timbr.ai/wp-content/uploads/2023/06/timbr-ai-l-5-226x60-1.png)
 
-# timbr Python connector sample file
-This project is a sample connecting to timbr using Python.
+# timbr Python connector using JDBC
+This project is a python connector to timbr using JDBC.
 
 ## Dependencies
 - Python 3.7.13+ or 3.8.x or 3.9.x
-- Java 8 or Java 11
+- Java 11 or Java 17 or Java 21
 
 ## Installation
 - Install as clone repository:
   - Install Python: https://www.python.org/downloads/release/python-3713/
   - Install Java: https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html
   - Run the following command to install the Python dependencies: `pip install -r requirements.txt`  (optional install pandas to run pandas example)
-  - Download the following jar to `jars` path: https://repo1.maven.org/maven2/org/apache/hive/hive-jdbc/2.3.9/hive-jdbc-2.3.9-standalone.jar
+  - Download the following jar to `jars` path: https://repo1.maven.org/maven2/org/apache/hive/hive-jdbc/4.0.1/hive-jdbc-4.0.1-standalone.jar
 
 - Install using pip and git:
   - `pip install git+https://github.com/WPSemantix/timbr_python_connector`
@@ -29,52 +29,145 @@ This project is a sample connecting to timbr using Python.
   - Create connection with params, follow this [Example File](examples/pandas_example.py)
   - Create JDBC connection, follow this [Example File](examples/pandas_example_JDBC.py)
 
-## Create basic connection 
+## Connection parameters examples
 
-### Create connection with params
-```python
-  conn = pytimbr.getConnection(
-    hostname = '<TIMBR_IP/HOST>',
-    port = '<TIMBR_PORT>',
-    ontology = '<ONTOLOGY_NAME>',
-    username = '<TIMBR_USER/token>',
-    password = '<TIMBR_PASSWORD/TOKEN_VALUE>',
-    enabled_ssl = '<false/true>',
-    http_path = '<TIMBR_SERVER_HTTP_PATH>'
-  )
+### Parameters for Basic function
 
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
-  # ontology - the ontology / knowledge graph to connect to.
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  # password - Should be the token value if using a token as a username, otherwise its the user's password.
-  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
-  # http_path - Use only if your timbr server http path is not '/timbr-server'.
-```
-
-### Create JDBC connection
+#### Generic example and explanation for each parameter
 ```python
   hostname = '<TIMBR_IP/HOST>'
   port = '<TIMBR_PORT>'
   ontology = '<ONTOLOGY_NAME>'
-  username = '<TIMBR_USER/token>'
-  password = '<TIMBR_PASSWORD/TOKEN_VALUE>'
+  username = '<token/TIMBR_USER>'
+  password = '<TOKEN_VALUE/TIMBR_PASSWORD>'
   enabled_ssl = '<false/true>'
   http_path = '<TIMBR_SERVER_HTTP_PATH>'
   
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
-  # ontology - the ontology / knowledge graph to connect to.
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  # password - Should be the token value if using a token as a username, otherwise its the user's password.
-  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
-  # http_path - Use only if your timbr server http path is not '/timbr-server'.
-  
-  # Create new JDBC connection
-  conn = pytimbr.getJdbcConnection(
-    f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath={http_path}",
+  # hostname    - Required  - String  - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
+  # port        - Required  - String  - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
+  # ontology    - Required  - String  - the ontology / knowledge graph to connect to.
+  # username    - Required  - String  - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password    - Required  - String  - Should be the token value if using a token as a username, otherwise its the user's password.
+  # enabled_ssl - Optional  - String  - 'true' if SSL is enabled, 'false' if SSL is disabled. The default value is 'true'.
+  # http_path   - Optional  - String  - Use only if your timbr server http path is not '/timbr-server'. The default value is '/timbr-server'.
+```
+
+#### HTTP example
+```python
+  hostname = 'mytimbrenv.com'
+  port = '11000'
+  ontology = 'my_ontology'
+  username = 'timbr'
+  password = 'StrongPassword'
+  enabled_ssl = 'false'
+  http_path = '/timbr-server'
+```
+
+#### HTTPS example
+```python
+  hostname = 'mytimbrenv.com'
+  port = '443'
+  ontology = 'my_ontology'
+  username = 'timbr'
+  password = 'StrongPassword'
+  enabled_ssl = 'true'
+  http_path = '/timbr-server'
+```
+
+### Parameters for JDBC function
+
+#### Generic example and explanation for each parameter
+```python
+  jdbc_url = '<TIMBR_JDBC_CONNECTION_URL>'
+  username = '<token/TIMBR_USER>'
+  password = '<TOKEN_VALUE/TIMBR_PASSWORD>'
+
+  # jdbc_url  - Required  - String  - The JDBC connection url.
+  # username  - Required  - String  - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password  - Required  - String  - Should be the token value if using a token as a username, otherwise its the user's password.
+```
+
+#### HTTP example
+```python
+  jdbc_url = 'jdbc:hive2://mytimbrenv.com:11000/my_ontology;transportMode=http;ssl=false;httpPath=/timbr-server'
+  username = 'timbr'
+  password = 'StrongPassword'
+```
+
+#### HTTPS example
+```python
+  jdbc_url = 'jdbc:hive2://mytimbrenv.com:443/my_ontology;transportMode=http;ssl=true;httpPath=/timbr-server'
+  username = 'timbr'
+  password = 'StrongPassword'
+```
+
+## Create new connection 
+
+### Create connection using basic function
+
+#### Generic example
+```python
+  conn = pytimbr.get_connection(
+    hostname,
+    port,
+    ontology,
+    username,
+    password,
+    enabled_ssl,
+    http_path
+  )
+```
+
+#### HTTP example
+```python
+  conn = pytimbr.get_connection(
+    'mytimbrenv.com',
+    '11000',
+    'my_ontology',
+    'timbr',
+    'StrongPassword',
+    'false',
+    '/timbr-server'
+  )
+```
+
+#### HTTPS example
+```python
+  hostname = 'mytimbrenv.com'
+  port = '443'
+  ontology = 'my_ontology'
+  username = 'timbr'
+  password = 'StrongPassword'
+  enabled_ssl = 'true'
+  http_path = '/timbr-server'
+```
+
+### Create connection using JDBC function
+
+#### Generic example
+```python
+  conn = pytimbr.get_jdbc_connection(
+    jdbc_url,
     username,
     password
+  )
+```
+
+#### HTTP example
+```python
+  conn = pytimbr.get_jdbc_connection(
+    "jdbc:hive2://mytimbrenv.com:11000/my_ontology;transportMode=http;ssl=false;httpPath=/timbr-server",
+    'timbr',
+    'StrongPassword'
+  )
+```
+
+#### HTTPS example
+```python
+  conn = pytimbr.get_jdbc_connection(
+    "jdbc:hive2://mytimbrenv.com:443/my_ontology;transportMode=http;ssl=true;httpPath=/timbr-server",
+    'timbr',
+    'StrongPassword'
   )
 ```
 
@@ -86,8 +179,19 @@ This project is a sample connecting to timbr using Python.
   with conn.cursor() as curs:
     # Execute query
     curs.execute('SHOW CONCEPTS')
+
     # Fetch results
     concepts = curs.fetchall()
+
+    # Print returned object headers
+    # Option 1 - Recommended
+    for i in range(1, curs._meta.getColumnCount() + 1):
+      print(curs._meta.getColumnName(i) + " - " + curs._meta.getColumnTypeName(i))
+
+    # Option 2- DBAPI
+    for col in curs.description:
+      print(col[0] + " - " + col[1].values[0])
+
     # Print the results
     for concept in concepts:
       print(concept)

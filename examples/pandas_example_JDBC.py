@@ -5,49 +5,32 @@ import pytimbr as timbr
 # use for repository installation
 import pytimbr.timbr_connector as timbr
 
-if __name__ == '__main__':    
-  # Declare the connection variables
-
-  # General example
-  hostname = '<TIMBR_IP/HOST>'
-  port = '<TIMBR_PORT>'
-  ontology = '<ONTOLOGY_NAME>' 
-  username = '<TIMBR_USER/token>'
-  password = '<TIMBR_PASSWORD/TOKEN_VALUE>'
-  enabled_ssl = '<false/true>'
-  http_path = '<TIMBR_SERVER_HTTP_PATH>'
-
-  # hostname - The IP / Hostname of the Timbr server (not necessarily the hostname of the Timbr platform).
-  # port - The port to connect to in the Timbr server. Timbr's default port with enabled_ssl is 443 without SSL is 11000.
-  # ontology - the ontology / knowledge graph to connect to.
-  # username - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
-  # password - Should be the token value if using a token as a username, otherwise its the user's password.
-  # enabled_ssl - true if SSL is enabled, false if SSL is disabled.
-  # http_path - Use only if your timbr server http path is not '/timbr-server'.
-
-  # HTTP example
-  hostname = 'mytimbrenv.com'
-  port = '11000'
-  ontology = 'my_ontology'
-  username = 'timbr'
-  password = 'StrongPassword'
-  enabled_ssl = 'false'
-  http_path = '/timbr-server'
-
-  # HTTPS example
-  hostname = 'mytimbrenv.com'
-  port = '443'
-  ontology = 'my_ontology'
-  username = 'timbr'
-  password = 'StrongPassword'
-  enabled_ssl = 'true'
-  http_path = '/timbr-server'
+if __name__ == '__main__':
 
   # Initiate a connection object
-  conn = timbr.getJdbcConnection(
-    f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath={http_path}",
-    username,
-    password
+  # Generic example
+  conn = timbr.get_jdbc_connection(
+    jdbc_url = '<TIMBR_JDBC_CONNECTION_URL>',
+    username = '<token/TIMBR_USER>',
+    password = '<TOKEN_VALUE/TIMBR_PASSWORD>'
+  )
+
+  # jdbc_url  - Required  - String  - The JDBC connection url.
+  # username  - Required  - String  - Use 'token' as the username when connecting using a Timbr token, otherwise its the user name.
+  # password  - Required  - String  - Should be the token value if using a token as a username, otherwise its the user's password.
+
+  # HTTP example
+  conn = timbr.get_jdbc_connection(
+    "jdbc:hive2://mytimbrenv.com:11000/my_ontology;transportMode=http;ssl=false;httpPath=/timbr-server",
+    'timbr',
+    'StrongPassword'
+  )
+
+  # HTTPS example
+  conn = timbr.get_jdbc_connection(
+    "jdbc:hive2://mytimbrenv.com:443/my_ontology;transportMode=http;ssl=true;httpPath=/timbr-server",
+    'timbr',
+    'StrongPassword'
   )
 
   # Execute a query using Pandas
