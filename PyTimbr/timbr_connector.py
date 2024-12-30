@@ -33,6 +33,17 @@ def get_combined_jars_path(maindir):
 
 jars_path = get_combined_jars_path(main_jar_path)
 
+def get_jdbc_connection(jdbc_url, username, password):
+  conn = timbr_jdbapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
+  return conn
+
+def get_connection(hostname, port, ontology, username, password, enabled_ssl = 'true', http_path = '/timbr-server'):
+  jdbc_url = f"jdbc:hive2://{hostname}:{port}/{ontology};transportMode=http;ssl={enabled_ssl};httpPath={http_path}"
+  conn = timbr_jdbapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
+  return conn
+
+# Deprecated - Backward compatibility
+
 def getJdbcConnection(jdbc_url, username, password):
   conn = timbr_jdbapi.connect(jdbc_driver, jdbc_url, [username, password], jars_path)
   return conn
