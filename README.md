@@ -1,5 +1,18 @@
 ![Timbr logo](https://timbr.ai/wp-content/uploads/2023/06/timbr-ai-l-5-226x60-1.png)
 
+[![license](https://img.shields.io/github/license/WPSemantix/timbr_python_connector)](https://github.com/WPSemantix/timbr_python_connector/blob/main/LICENSE)
+[![PypiVersion](https://img.shields.io/pypi/v/pytimbr.svg)](https://badge.fury.io/py/pytimbr)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=license)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=license)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=security)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=security)
+
+[![Python 3.7.13](https://img.shields.io/badge/python-3.7.13+-blue.svg)](https://www.python.org/downloads/release/python-3713/)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-3820/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-3921/)
+
+[![Java 11](https://img.shields.io/badge/Java-11-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html)
+[![Java 17](https://img.shields.io/badge/Java-17-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk17-archive-downloads.html)
+[![Java 21](https://img.shields.io/badge/Java-21-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk21-archive-downloads.html)
+
 # timbr Python connector using JDBC
 This project is a python connector to timbr using JDBC.
 
