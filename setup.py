@@ -19,7 +19,7 @@ setuptools.setup(
   license='MIT',
   packages=['pytimbr'],
   install_requires=[
-    'JPype1==1.4.1',
+    'JPype1==1.5.1',
   ],
   package_data={
     'pytimbr': ['jars/*'],
