@@ -1,2 +1,17 @@
-This project uses components from JPype1, licensed under the Apache License 2.0.
-You can find a copy of the license at https://www.apache.org/licenses/LICENSE-2.0.
+# NOTICE
+
+This project is licensed under the MIT License. Additionally, it includes the following third-party dependencies:
+
+1. JPype1
+  - License: Apache License 2.0
+  - Source: https://pypi.org/project/JPype1/
+  - Summary: A permissive license allowing use, modification, and distribution with attribution.
+
+2. JPype1 (Additional)
+  - License: GNU General Public License v2.0 with Classpath Exception
+  - Source: https://pypi.org/project/JPype1/
+  - Summary: This license permits linking with independent modules under terms of your choice, provided they are compatible with linked libraries.
+
+---
+
+Please refer to the `LICENSE` file for the primary license and further details about dependency licenses.

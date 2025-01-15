@@ -1,17 +1,21 @@
 ![Timbr logo](https://timbr.ai/wp-content/uploads/2023/06/timbr-ai-l-5-226x60-1.png)
 
+![MIT License](https://img.shields.io/badge/License-MIT-green)
+![GPL-2.0 License](https://img.shields.io/badge/License-GPL--2.0-green)
+![Apache License 2.0](https://img.shields.io/badge/License-Apache%202.0-green)
+
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=license)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=license)
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=security)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=security)
 
-[![Python 3.7.13](https://img.shields.io/badge/python-3.7.13+-blue.svg)](https://www.python.org/downloads/release/python-3713/)
-[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-3820/)
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-3921/)
+[![Python 3.7.13](https://img.shields.io/badge/python-3.7.13+-blue)](https://www.python.org/downloads/release/python-3713/)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue)](https://www.python.org/downloads/release/python-3820/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org/downloads/release/python-3921/)
 
-[![Java 11](https://img.shields.io/badge/Java-11-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html)
-[![Java 17](https://img.shields.io/badge/Java-17-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk17-archive-downloads.html)
-[![Java 21](https://img.shields.io/badge/Java-21-red.svg)](https://www.oracle.com/il-en/java/technologies/javase/jdk21-archive-downloads.html)
+[![Java 11](https://img.shields.io/badge/Java-11-red)](https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html)
+[![Java 17](https://img.shields.io/badge/Java-17-red)](https://www.oracle.com/il-en/java/technologies/javase/jdk17-archive-downloads.html)
+[![Java 21](https://img.shields.io/badge/Java-21-red)](https://www.oracle.com/il-en/java/technologies/javase/jdk21-archive-downloads.html)
 
-[![PypiVersion](https://img.shields.io/pypi/v/pytimbr.svg)](https://badge.fury.io/py/pytimbr)
+[![PypiVersion](https://img.shields.io/pypi/v/pytimbr)](https://badge.fury.io/py/pytimbr)
 
 # timbr Python connector using JDBC
 This project is a python connector to timbr using JDBC.
@@ -221,3 +225,21 @@ This project is a python connector to timbr using JDBC.
   print("--------------------------------------")
   print(df.count())
 ```
+
+## Licensing
+This project is licensed under the MIT License. It includes third-party dependencies with different licenses:
+
+### Third-Party Dependencies
+
+- **JPype1** (version 1.5.1): Dual-licensed under GPL-2.0 and Apache License 2.0
+
+#### JPype1 License: GPL-2.0 and Apache License 2.0
+
+The **JPype1** package is available under both the **GPL-2.0** and the **Apache License 2.0**, and you can choose to use it under either of these licenses:
+
+- **GPL-2.0**: If you choose the GPL-2.0 license, you must comply with its terms, including providing attribution, distributing the source code, and adhering to the requirements for redistribution.
+- **Apache License 2.0**: If you choose the Apache License 2.0, you can use, modify, and distribute the code, as long as you comply with the terms of the Apache License, which generally involves attribution and inclusion of a copy of the license when redistributing the code.
+
+For full details on the licenses, see the [LICENSE](LICENSE) file or visit the links below:
+- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- [GPL-2.0](https://opensource.org/licenses/GPL-2.0)
