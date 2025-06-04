@@ -1,0 +1,42 @@
+name: Test Python package new version
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Update pip version
+      run: |
+        python -m pip install --upgrade pip
+    - name: Install dependencies
+      run: |
+        pip install -r test/requirements.txt
+    - name: Build new version of the package
+      run: |
+        python -m build
+    - name: Install the new version of the package
+      run: |
+        pip install dist/*.tar.gz
+    - name: Test with pytest
+      env:
+        HOSTNAME: ${{ secrets.HOSTNAME }}
+        PORT: ${{ secrets.PORT }}
+        PROTOCOL: ${{ secrets.PROTOCOL }}
+        ONTOLOGY: ${{ secrets.ONTOLOGY }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        CONNECT_ARGS: ${{ secrets.CONNECT_ARGS }}
+      run: |
+        pytest
