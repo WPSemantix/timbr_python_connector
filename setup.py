@@ -20,6 +20,8 @@ setuptools.setup(
   packages=['pytimbr'],
   install_requires=[
     'JPype1==1.5.1',
+    'pandas==1.3.5',
+    'numpy==1.26.4',
   ],
   package_data={
     'pytimbr': ['jars/*'],

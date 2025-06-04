@@ -1,4 +1,4 @@
-![Timbr logo](https://timbr.ai/wp-content/uploads/2023/06/timbr-ai-l-5-226x60-1.png)
+![Timbr logo](https://timbr.ai/wp-content/uploads/2025/01/logotimbrai230125.png)
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 ![GPL-2.0 License](https://img.shields.io/badge/License-GPL--2.0-green)
@@ -7,9 +7,10 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=license)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=license)
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=security)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=security)
 
-[![Python 3.7.13](https://img.shields.io/badge/python-3.7.13+-blue)](https://www.python.org/downloads/release/python-3713/)
-[![Python 3.8](https://img.shields.io/badge/python-3.8-blue)](https://www.python.org/downloads/release/python-3820/)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org/downloads/release/python-3921/)
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31017/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-31112/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3129/)
 
 [![Java 11](https://img.shields.io/badge/Java-11-red)](https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html)
 [![Java 17](https://img.shields.io/badge/Java-17-red)](https://www.oracle.com/il-en/java/technologies/javase/jdk17-archive-downloads.html)
@@ -21,12 +22,13 @@
 This project is a python connector to timbr using JDBC.
 
 ## Dependencies
-- Python 3.7.13+ or 3.8.x or 3.9.x
+- Access to a timbr-server
+- Python from 3.9.13 or newer
 - Java 11 or Java 17 or Java 21
 
 ## Installation
 - Install as clone repository:
-  - Install Python: https://www.python.org/downloads/release/python-3713/
+  - Install Python: https://www.python.org/downloads/release/python-3913/
   - Install Java: https://www.oracle.com/il-en/java/technologies/javase/jdk11-archive-downloads.html
   - Run the following command to install the Python dependencies: `pip install -r requirements.txt`  (optional install pandas to run pandas example)
   - Download the following jar to `jars` path: https://repo1.maven.org/maven2/org/apache/hive/hive-jdbc/4.0.1/hive-jdbc-4.0.1-standalone.jar
