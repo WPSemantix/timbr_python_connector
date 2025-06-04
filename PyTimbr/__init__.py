@@ -1,1 +1,0 @@
-from .timbr_connector import getJdbcConnection, getConnection, get_jdbc_connection, get_connection
