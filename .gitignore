@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.vscode/launch.json
 
 # C extensions
 *.so
@@ -50,7 +51,11 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-test.py
+test/env*
+test/.python-version
+test/.env
+test/run*
+test/*old*
 
 # Translations
 *.mo
@@ -110,7 +115,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.vscode
 
 # Spyder project settings
 .spyderproject
