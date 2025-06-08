@@ -1,9 +1,5 @@
 ![Timbr logo](https://timbr.ai/wp-content/uploads/2025/01/logotimbrai230125.png)
 
-![MIT License](https://img.shields.io/badge/License-MIT-green)
-![GPL-2.0 License](https://img.shields.io/badge/License-GPL--2.0-green)
-![Apache License 2.0](https://img.shields.io/badge/License-Apache%202.0-green)
-
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=license)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=license)
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector.svg?type=shield&issueType=security)](https://app.fossa.com/projects/custom%2B50508%2Fgithub.com%2FWPSemantix%2Ftimbr_python_connector?ref=badge_shield&issueType=security)
 
