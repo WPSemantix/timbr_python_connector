@@ -33,10 +33,10 @@ jobs:
       env:
         HOSTNAME: ${{ secrets.HOSTNAME }}
         PORT: ${{ secrets.PORT }}
-        PROTOCOL: ${{ secrets.PROTOCOL }}
         ONTOLOGY: ${{ secrets.ONTOLOGY }}
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        CONNECT_ARGS: ${{ secrets.CONNECT_ARGS }}
+        ENABLED_SSL: ${{ secrets.ENABLED_SSL }}
+        HTTP_PATH: ${{ secrets.HTTP_PATH }}
       run: |
         pytest
