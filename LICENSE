@@ -31,3 +31,39 @@ This project uses third-party dependencies licensed under the following terms:
 2. JPype1 (Additional)
    - License: GNU General Public License v2.0 with Classpath Exception
    - Full text: https://www.gnu.org/software/classpath/license.html
+
+3. numpy
+   - License: CC By-SA 3.0
+   - Full text: https://creativecommons.org/licenses/by-sa/3.0/
+
+4. numpy
+   - License: Creative Commons Attribution-ShareAlike 4.0 International
+   - Full text: https://creativecommons.org/licenses/by-sa/4.0/
+
+5. numpy
+   - License: Open Public License v1.0
+   - Full text: https://fedoraproject.org/wiki/Licensing/Open_Public_License
+
+6. numpy
+   - License: GNU General Public License v3.0 w/GCC Runtime Library exception
+   - Full text: https://www.gnu.org/licenses/gcc-exception-3.1.html
+
+7. numpy
+   - License: GNU General Public License v3.0 only
+   - Full text: https://www.gnu.org/licenses/gpl-3.0.html
+
+8. numpy
+   - License: GNU General Public License v3.0 or later
+   - Full text: https://www.gnu.org/licenses/gpl-3.0.html
+
+9. numpy
+   - License: GNU Library General Public License v2 or later
+   - Full text: https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+
+10. numpy
+   - License: GNU Lesser General Public License v2.1 only
+   - Full text: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+
+11. numpy
+   - License: GNU Lesser General Public License v2.1 or later
+   - Full text: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
