@@ -4,11 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pytimbr"
-version = "2.1.0"
+version = "2.1.1"
 description = "Timbr Python connector"
 readme = "README.md"
-license = "MIT"
-license-files = ["LICENSE", "NOTICE"]
 authors = [
   {name = "timbr", email = "contact@timbr.ai"}
 ]
